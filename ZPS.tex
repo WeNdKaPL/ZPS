@@ -1,0 +1,34 @@
+\documentclass[12pt, a4paper, 2.5cm]{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[margin=2cm]{geometry}
+\usepackage{polski}
+\title{Gry topologiczne}
+\author{Adrian Bętkowski, Olaf Jankowski-Pluntke, Marta Kosz}
+\date{Stan na 11.11.2025}
+\begin{document}
+	\maketitle
+	\section{Pojęcia wstępne}
+	Przestrzeń Baire'a - zbiór nieskończonych ciągów liczb naturalnych z topologią produktową, ozn. $B(\omega)$.
+	\section{Gry topologiczne}
+	Gra topologiczna to w ogólności nieskończona gra pozycyjna między dwoma graczami, których kolejne ruchy polegają na wybieraniu obiektów o zadanych własnościach topologicznych, np. punktów, zbiorów otwartych/domkniętych.\\
+	Niech gra toczy się między graczami I i II i niech wybierają oni w każdym kroku podzbiory przestrzeni topologicznej $X$, oznaczone odpowiednio przez $I_n$ dla gracza I oraz $J_n$ dla gracza II. Wówczas rezultatem gry jest ciąg $I_0,J_0,I_1,J_1,\dots$. Gracz I wygrywa, jeżeli ciąg ten spełnia jakąś zadaną wcześniej własność, w przeciwnym wypadku wygrywa gracz II.\\
+	Strategią wygrywającą dla danego gracza nazwiemy taki sposób podejmowania decyzji w swojej turze, który gwarantuje mu zwycięstwo niezależnie od decyzji drugiego gracza.
+	\section{Gra Banacha-Mazura}
+	Przykładem gry topologicznej jest gra Banacha-Mazura. Rozgrywa się ona na przestrzeni Baire'a $B(\omega)$ z wyróżnionym $E\subseteq B(\omega)$. W swoim ruchu każdy gracz wybiera liczbę naturalną, konstruując w tej sposób ciąg $(m_n)^\infty_{n=0}$, gdzie elementy o indeksach parzystych wybierał gracz I a elementy o indeksach nieparzystych gracz II. Gracz I wygrywa, jeżeli $(m_n)^\infty_{n=0}\in E$, w przeciwnym wypadku wygrywa gracz II. Taką grę oznaczamy poprzez $G_{BM}(E)$.\\
+	Grę Banacha-Mazura można uogólnić do dowolnej przestrzeni topologicznej $X$ z wyróżnionym podzbiorem $E\subseteq X$. Wówczas grę rozpoczyna gracz I wybierając otwarty zbiór $U_0\subseteq X$, po czym każdy gracz wybiera zbiory otwarte tak, aby utworzyć ciąg $U_0\supseteq V_0\supseteq U_1\supseteq V_1,\dots$. Gracz I wygrywa tę grę jeśli $E\cap \left(\bigcap^\infty_{n=0} U_n\right)\neq \emptyset$, w przeciwnym wypadku wygrywa gracz II. Oznaczamy tę grę poprzez $G_{uBM}(X, E)$.\newpage\noindent
+	Mówimy, że gra $G_{BM}(E)$ lub $G_{uBM}(X, E)$ jest zdeterminowana, jeżeli któryś z graczy ma strategię wygrywającą.\\
+	Możemy zauważyć, że jeżeli zbiór $E\subseteq B(\omega)$ jest przeliczalny, to wówczas gracz II ma strategię wygrywającą.
+	\begin{proof}
+		~\\
+		Niech $E=\{(_lk_n)\in B(\omega):l\in\mathbb{N}\}$.\\
+		Wówczas wystarczy, żeby gracz II wybrał $m_{2n+1}\neq\:_nk_{2n+1}$. Każda taka decyzja zapewnia, że $(m_{n})\neq ( _nk_n)$, zatem $(m_n)\not\in E$.
+	\end{proof}
+	\noindent Analogicznie można znaleźć również strategię wygrywającą dla gracza I jeżeli $B(\omega)\setminus E$ jest przeliczalny.
+	\section{Aksjomat determinacji}
+	Aksjomat determinacji to jeden z możliwych aksjomatów teorii mnogości, mówiący: 
+	\begin{center}
+		\textit{Dla każdego $E\subseteq B(\omega)$ gra $G_{BM}(E)$ jest zdeterminowana}.
+	\end{center}
+\end{document}
