@@ -106,12 +106,16 @@ domkniętych $F_1 \supseteq F_2 \supseteq \ldots$ o średnicach dążących do z
 
 	\section{Gry topologiczne}
 	Gra topologiczna to w ogólności nieskończona gra pozycyjna między dwoma graczami, których kolejne ruchy polegają na wybieraniu obiektów o zadanych własnościach topologicznych, np. punktów, zbiorów otwartych/domkniętych.\\
-	Niech gra toczy się między graczami I i II i niech wybierają oni w każdym kroku podzbiory przestrzeni topologicznej $X$, oznaczone odpowiednio przez $I_n$ dla gracza I oraz $J_n$ dla gracza II. Wówczas rezultatem gry jest ciąg $I_0,J_0,I_1,J_1,\dots$. Gracz I wygrywa, jeżeli ciąg ten spełnia jakąś zadaną wcześniej własność, w przeciwnym wypadku wygrywa gracz II.\\
-	Strategią wygrywającą dla danego gracza nazwiemy taki sposób podejmowania decyzji w swojej turze, który gwarantuje mu zwycięstwo niezależnie od decyzji drugiego gracza.
+	Niech gra toczy się między graczami I i II i niech wybierają oni w każdym kroku podzbiory przestrzeni topologicznej $X$, oznaczone odpowiednio przez $I_n$ dla gracza I oraz $J_n$ dla gracza II. Wówczas rezultatem gry jest ciąg $I_0,J_0,I_1,J_1,\dots$. Gracz I wygrywa, jeżeli ciąg ten spełnia jakąś zadaną wcześniej własność, w przeciwnym wypadku wygrywa gracz II.
+	\begin{definition}
+		Strategią wygrywającą dla danego gracza nazwiemy taki sposób podejmowania decyzji w swojej turze, który gwarantuje mu zwycięstwo niezależnie od decyzji drugiego gracza.
+	\end{definition}
 	\section{Gra Banacha-Mazura}
-	Przykładem gry topologicznej jest gra Banacha-Mazura. Rozgrywa się ona na przestrzeni Baire'a $B(\omega)$ z wyróżnionym $E\subseteq B(\omega)$. W swoim ruchu każdy gracz wybiera liczbę naturalną, konstruując w tej sposób ciąg $(m_n)^\infty_{n=0}$, gdzie elementy o indeksach parzystych wybierał gracz I a elementy o indeksach nieparzystych gracz II. Gracz I wygrywa, jeżeli $(m_n)^\infty_{n=0}\in E$, w przeciwnym wypadku wygrywa gracz II. Taką grę oznaczamy poprzez $G_{BM}(E)$.\\
-	Grę Banacha-Mazura można uogólnić do dowolnej przestrzeni topologicznej $X$ z wyróżnionym podzbiorem $E\subseteq X$. Wówczas grę rozpoczyna gracz I wybierając otwarty zbiór $U_0\subseteq X$, po czym każdy gracz wybiera zbiory otwarte tak, aby utworzyć ciąg $U_0\supseteq V_0\supseteq U_1\supseteq V_1,\dots$. Gracz I wygrywa tę grę jeśli $E\cap \left(\bigcap^\infty_{n=0} U_n\right)\neq \emptyset$, w przeciwnym wypadku wygrywa gracz II. Oznaczamy tę grę poprzez $G_{uBM}(X, E)$.\\
-	Mówimy, że gra $G_{BM}(E)$ lub $G_{uBM}(X, E)$ jest zdeterminowana, jeżeli któryś z graczy ma strategię wygrywającą.
+	Przykładem gry topologicznej jest gra Banacha-Mazura. Rozgrywa się ona na przestrzeni Baire'a $B(\omega)$ z wyróżnionym $E\subseteq B(\omega)$. W swoim ruchu każdy gracz wybiera liczbę naturalną, konstruując w tej sposób ciąg $(m_n)^\infty_{n=0}$, gdzie elementy o indeksach parzystych wybierał gracz I a elementy o indeksach nieparzystych gracz II. Gracz I wygrywa, jeżeli $(m_n)^\infty_{n=0}\in E$, w przeciwnym wypadku wygrywa gracz II. Taką grę oznaczamy poprzez $G_{BM}(E)$.\\\\
+	Grę Banacha-Mazura można uogólnić do dowolnej przestrzeni topologicznej $X$ z wyróżnionym podzbiorem $E\subseteq X$. Wówczas grę rozpoczyna gracz I wybierając otwarty zbiór $U_0\subseteq X$, po czym każdy gracz wybiera zbiory otwarte tak, aby utworzyć ciąg $U_0\supseteq V_0\supseteq U_1\supseteq V_1,\dots$. Gracz I wygrywa tę grę jeśli $E\cap \left(\bigcap^\infty_{n=0} U_n\right)\neq \emptyset$, w przeciwnym wypadku wygrywa gracz II. Oznaczamy tę grę poprzez $G_{uBM}(X, E)$.
+	\begin{definition}
+		Gra $G_{BM}(E)$ lub $G_{uBM}(X, E)$ jest zdeterminowana, jeżeli któryś z graczy ma strategię wygrywającą.
+	\end{definition}
 	\begin{theorem}
 		~\\
 		Jeżeli zbiór $E\subseteq B(\omega)$ jest przeliczalny, to wówczas gracz II ma strategię wygrywającą.
