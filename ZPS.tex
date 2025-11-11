@@ -4,13 +4,107 @@
 \usepackage{amssymb}
 \usepackage[margin=2cm]{geometry}
 \usepackage{polski}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Twierdzenie}
+\newtheorem{definition}{Definicja}
+\renewcommand{\proofname}{Dowód}
+
 \title{Gry topologiczne}
 \author{Adrian Bętkowski, Olaf Jankowski-Pluntke, Marta Kosz}
 \date{Stan na 11.11.2025}
 \begin{document}
 	\maketitle
 	\section{Pojęcia wstępne}
+	
+	TO DO:
+\begin{enumerate}
+\item Do bibliografii: definicje w rozdziałach "definicje" i "zupełność" zostały wzięte z notatek z topologii,warto więc wybrać z której książki korzystamy i je do tego dostosować.
+\item do definicji: ciąg zbieżny
+\item Czy definiować topologię, zb. otw i domkn?
+ \item Czy przestrzen metryczna => topologiczna dać jako twierdzenie?
+
+\end{enumerate}
+
+W tym rozdziale przytoczymy często powtarzające się definicje potrzebne do pełnego zrozumienia pracy.
+
+\begin{definition}
+Metryką na zbiorze $M$ nazwiemy funkcję $d: M \times M \to [0, +\infty)$ spełniającą następujące warunki dla $a,b,c \in M$:
+
+\begin{enumerate} 
+\item $d(a, b) = 0 \iff a = b$,
+\item $d(a, b) = d(b, a)$,
+\item (Nierówność trójkąta) $d(a, b) \leq d(a, c) + d(c, b)$. 
+\end{enumerate}
+
+\end{definition}
+
+\begin{definition}
+Przestrzeń metryczna $(M, d)$ składa się ze zbioru $M$ oraz zadanej na nim metryki $d$. Każda przestrzeń metryczna jest również przestrzenią topologiczną.
+\end{definition}
+
+\begin{definition}
+Domknięcie zb. $A$ jest to najmniejszy zbiór domknięty zawierający $A$. Oznaczać je będziemy symbolem $\overline{A}$.
+\end{definition}
+
+\begin{definition}
+Przez średnicę zbioru rozumiemy:
+$\rm diam(F_n) := \sup\{d(y_1,y_2)\mid y_1,y_2\in F_n\}$.
+\end{definition}
+
+\begin{definition}
 	Przestrzeń Baire'a - zbiór nieskończonych ciągów liczb naturalnych z topologią produktową, ozn. $B(\omega)$.
+\end{definition}
+
+	\section{Zupełność}
+
+\begin{definition}
+Niech $(M,d)$ będzie przestrzenią metryczną. Ciągiem Cauchy'ego
+nazwiemy taki ciąg $(x_n)_{n \in \mathbb{N}}$ elementów $M$, dla którego niezależnie od wyboru
+$\varepsilon>0$, istnieje $N$ taki, że dla $n$ i $m$ większych lub równych
+$N$ zachodzi $d(x_n,x_m) < \varepsilon$.
+\end{definition}
+
+\begin{theorem}
+W dowolnej przestrzeni metrycznej każdy ciąg zbieżny jest ciągiem Cauchy'ego.
+\end{theorem}
+
+\begin{proof}
+Niech $(x_n)_{n \in \mathbb{N}}$, będzie ciągiem w przestrzeni metrycznej
+zbiegającym do $x$. Wobec tego dla każdego $\varepsilon>0$ istnieje taki
+$N$, że dla $i \ge N$ zachodzi $d(x_i,x) < \varepsilon/2$. Wobec tego dla
+dowolnych wyrazów $x_n$ oraz $x_m$ takich, że $n,m \ge N$, z nierówności
+trójkąta zachodzi również
+\[
+d(x_n,x_m) \le d(x_n,x) + d(x_m,x) < \varepsilon/2 + \varepsilon/2
+= \varepsilon.
+\]
+\end{proof}
+
+\begin{definition}
+Przestrzeń metryczną, która spełnia warunki z poniższego twierdzenia, nazywamy zupełną.
+\end{definition}
+
+\begin{theorem}
+Następujące warunki są równoważne:
+\begin{enumerate}
+\item Każdy ciąg Cauchy'ego w dowolnej przestrzeni metrycznej $(M, d)$ posiada granicę.
+\item (Twierdzenie Cantora) każdy zstępujący ciąg niepustych zbiorów
+domkniętych $F_1 \supseteq F_2 \supseteq \ldots$ o średnicach dążących do zera
+($\rm diam(F_n) \to 0$) ma niepuste przecięcie.
+\end{enumerate}
+\\
+\end{theorem}
+
+ \begin{proof} 
+ \textbf{1 $\Rightarrow$ 2} 
+ \\ Niech $F_1 \supseteq F_2 \supseteq \ldots$ będzie ciągiem zbiorów domkniętych spełniającym $\rm diam(F_n) \to 0$. Zauważmy, że możemy wybrać ciąg $(x_n)_{n \in \mathbb{N}}$, taki że dla każdego n, $x_n \in F_n$. Będzie to ciąg Cauchy’ego, ponieważ dla każdego $\varepsilon>0$ istnieje $N$, dla którego $\ d(y_1, y_2)<\varepsilon $ dla $ y_1, y_2 \in F_N$. Natomiast jeżeli $n, m \ge N$ to $x_n, x_m$ należą do $F_N$, czyli zachodzi $d(x_n,x_m) < \varepsilon$. Z założenia wiemy, że dowolny ciąg Cauchy'ego ma granicę $x$. Ponieważ w dowolnym $F_n \setminus F_{n+1}$ mamy jedynie pierwsze skończenie wiele wyrazów ciągu, to $x$ musi należeć do każdego $F_n$, czyli do ich przecięcia. 
+ 
+ \\ 
+ \textbf{2 $\Rightarrow$ 1} \\ Niech $x_n$ będzie ciągiem Cauchy'ego. Weźmy zb. domknięte $F_n = \operatorname{cl} \{x_m : m \ge n\}$. Zauważmy, że skoro $x_n$ jest ciągiem Cauchy'ego, to $\rm diam(F_n) \to 0$. Wobec tego istnieje punkt $x \in \bigcap F_n$, więc mamy $ \sup \{ d(x,y) \mid y \in F_n, x \in \bigcap F_n \} \to 0$, ale jak łatwo można zauważyć $ \sup \{ d(x, y) \mid y \in F_n, x \in \bigcap F_n \} \ge d(x,x_n)$ dla wyrazów ciągu $(x_n)_{n \in \mathbb{N}}$, zatem $x_n \to x$.
+
+\end{proof}
+
 	\section{Gry topologiczne}
 	Gra topologiczna to w ogólności nieskończona gra pozycyjna między dwoma graczami, których kolejne ruchy polegają na wybieraniu obiektów o zadanych własnościach topologicznych, np. punktów, zbiorów otwartych/domkniętych.\\
 	Niech gra toczy się między graczami I i II i niech wybierają oni w każdym kroku podzbiory przestrzeni topologicznej $X$, oznaczone odpowiednio przez $I_n$ dla gracza I oraz $J_n$ dla gracza II. Wówczas rezultatem gry jest ciąg $I_0,J_0,I_1,J_1,\dots$. Gracz I wygrywa, jeżeli ciąg ten spełnia jakąś zadaną wcześniej własność, w przeciwnym wypadku wygrywa gracz II.\\
@@ -32,3 +126,4 @@
 		\textit{Dla każdego $E\subseteq B(\omega)$ gra $G_{BM}(E)$ jest zdeterminowana}.
 	\end{center}
 \end{document}
+
