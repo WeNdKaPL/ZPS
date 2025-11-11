@@ -93,14 +93,13 @@ Następujące warunki są równoważne:
 domkniętych $F_1 \supseteq F_2 \supseteq \ldots$ o średnicach dążących do zera
 ($\rm diam(F_n) \to 0$) ma niepuste przecięcie.
 \end{enumerate}
-\\
 \end{theorem}
 
  \begin{proof} 
  \textbf{1 $\Rightarrow$ 2} 
  \\ Niech $F_1 \supseteq F_2 \supseteq \ldots$ będzie ciągiem zbiorów domkniętych spełniającym $\rm diam(F_n) \to 0$. Zauważmy, że możemy wybrać ciąg $(x_n)_{n \in \mathbb{N}}$, taki że dla każdego n, $x_n \in F_n$. Będzie to ciąg Cauchy’ego, ponieważ dla każdego $\varepsilon>0$ istnieje $N$, dla którego $\ d(y_1, y_2)<\varepsilon $ dla $ y_1, y_2 \in F_N$. Natomiast jeżeli $n, m \ge N$ to $x_n, x_m$ należą do $F_N$, czyli zachodzi $d(x_n,x_m) < \varepsilon$. Z założenia wiemy, że dowolny ciąg Cauchy'ego ma granicę $x$. Ponieważ w dowolnym $F_n \setminus F_{n+1}$ mamy jedynie pierwsze skończenie wiele wyrazów ciągu, to $x$ musi należeć do każdego $F_n$, czyli do ich przecięcia. 
  
- \\ 
+ ~\\ 
  \textbf{2 $\Rightarrow$ 1} \\ Niech $x_n$ będzie ciągiem Cauchy'ego. Weźmy zb. domknięte $F_n = \operatorname{cl} \{x_m : m \ge n\}$. Zauważmy, że skoro $x_n$ jest ciągiem Cauchy'ego, to $\rm diam(F_n) \to 0$. Wobec tego istnieje punkt $x \in \bigcap F_n$, więc mamy $ \sup \{ d(x,y) \mid y \in F_n, x \in \bigcap F_n \} \to 0$, ale jak łatwo można zauważyć $ \sup \{ d(x, y) \mid y \in F_n, x \in \bigcap F_n \} \ge d(x,x_n)$ dla wyrazów ciągu $(x_n)_{n \in \mathbb{N}}$, zatem $x_n \to x$.
 
 \end{proof}
@@ -111,9 +110,12 @@ domkniętych $F_1 \supseteq F_2 \supseteq \ldots$ o średnicach dążących do z
 	Strategią wygrywającą dla danego gracza nazwiemy taki sposób podejmowania decyzji w swojej turze, który gwarantuje mu zwycięstwo niezależnie od decyzji drugiego gracza.
 	\section{Gra Banacha-Mazura}
 	Przykładem gry topologicznej jest gra Banacha-Mazura. Rozgrywa się ona na przestrzeni Baire'a $B(\omega)$ z wyróżnionym $E\subseteq B(\omega)$. W swoim ruchu każdy gracz wybiera liczbę naturalną, konstruując w tej sposób ciąg $(m_n)^\infty_{n=0}$, gdzie elementy o indeksach parzystych wybierał gracz I a elementy o indeksach nieparzystych gracz II. Gracz I wygrywa, jeżeli $(m_n)^\infty_{n=0}\in E$, w przeciwnym wypadku wygrywa gracz II. Taką grę oznaczamy poprzez $G_{BM}(E)$.\\
-	Grę Banacha-Mazura można uogólnić do dowolnej przestrzeni topologicznej $X$ z wyróżnionym podzbiorem $E\subseteq X$. Wówczas grę rozpoczyna gracz I wybierając otwarty zbiór $U_0\subseteq X$, po czym każdy gracz wybiera zbiory otwarte tak, aby utworzyć ciąg $U_0\supseteq V_0\supseteq U_1\supseteq V_1,\dots$. Gracz I wygrywa tę grę jeśli $E\cap \left(\bigcap^\infty_{n=0} U_n\right)\neq \emptyset$, w przeciwnym wypadku wygrywa gracz II. Oznaczamy tę grę poprzez $G_{uBM}(X, E)$.\newpage\noindent
-	Mówimy, że gra $G_{BM}(E)$ lub $G_{uBM}(X, E)$ jest zdeterminowana, jeżeli któryś z graczy ma strategię wygrywającą.\\
-	Możemy zauważyć, że jeżeli zbiór $E\subseteq B(\omega)$ jest przeliczalny, to wówczas gracz II ma strategię wygrywającą.
+	Grę Banacha-Mazura można uogólnić do dowolnej przestrzeni topologicznej $X$ z wyróżnionym podzbiorem $E\subseteq X$. Wówczas grę rozpoczyna gracz I wybierając otwarty zbiór $U_0\subseteq X$, po czym każdy gracz wybiera zbiory otwarte tak, aby utworzyć ciąg $U_0\supseteq V_0\supseteq U_1\supseteq V_1,\dots$. Gracz I wygrywa tę grę jeśli $E\cap \left(\bigcap^\infty_{n=0} U_n\right)\neq \emptyset$, w przeciwnym wypadku wygrywa gracz II. Oznaczamy tę grę poprzez $G_{uBM}(X, E)$.\\
+	Mówimy, że gra $G_{BM}(E)$ lub $G_{uBM}(X, E)$ jest zdeterminowana, jeżeli któryś z graczy ma strategię wygrywającą.
+	\begin{theorem}
+		~\\
+		Jeżeli zbiór $E\subseteq B(\omega)$ jest przeliczalny, to wówczas gracz II ma strategię wygrywającą.
+	\end{theorem}
 	\begin{proof}
 		~\\
 		Niech $E=\{(_lk_n)\in B(\omega):l\in\mathbb{N}\}$.\\
