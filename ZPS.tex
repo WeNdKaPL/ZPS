@@ -8,6 +8,9 @@
 \theoremstyle{definition}
 \newtheorem{theorem}{Twierdzenie}
 \newtheorem{definition}{Definicja}
+\newtheorem{lemma}{Lemat}
+\newtheorem{fact}{Fakt}
+\newtheorem{remark}{Uwaga}
 \renewcommand{\proofname}{Dowód}
 
 \title{Gry topologiczne}
@@ -16,110 +19,111 @@
 \begin{document}
 	\maketitle
 	\section{Pojęcia wstępne}
-	
 	TO DO:
-\begin{enumerate}
-\item Do bibliografii: definicje w rozdziałach "definicje" i "zupełność" zostały wzięte z notatek z topologii,warto więc wybrać z której książki korzystamy i je do tego dostosować.
-\item do definicji: ciąg zbieżny
-\item Czy definiować topologię, zb. otw i domkn?
- \item Czy przestrzen metryczna => topologiczna dać jako twierdzenie?
-
-\end{enumerate}
-
-W tym rozdziale przytoczymy często powtarzające się definicje potrzebne do pełnego zrozumienia pracy.
-
-\begin{definition}
-Metryką na zbiorze $M$ nazwiemy funkcję $d: M \times M \to [0, +\infty)$ spełniającą następujące warunki dla $a,b,c \in M$:
-
-\begin{enumerate} 
-\item $d(a, b) = 0 \iff a = b$,
-\item $d(a, b) = d(b, a)$,
-\item (Nierówność trójkąta) $d(a, b) \leq d(a, c) + d(c, b)$. 
-\end{enumerate}
-
-\end{definition}
-
-\begin{definition}
-Przestrzeń metryczna $(M, d)$ składa się ze zbioru $M$ oraz zadanej na nim metryki $d$. Każda przestrzeń metryczna jest również przestrzenią topologiczną.
-\end{definition}
-
-\begin{definition}
-Domknięcie zb. $A$ jest to najmniejszy zbiór domknięty zawierający $A$. Oznaczać je będziemy symbolem $\overline{A}$.
-\end{definition}
-
-\begin{definition}
-Przez średnicę zbioru rozumiemy:
-$\rm diam(F_n) := \sup\{d(y_1,y_2)\mid y_1,y_2\in F_n\}$.
-\end{definition}
-
-\begin{definition}
-	Przestrzeń Baire'a - zbiór nieskończonych ciągów liczb naturalnych z topologią produktową, ozn. $B(\omega)$.
-\end{definition}
-
+	\begin{enumerate}
+		\item Do bibliografii: definicje w rozdziałach "definicje" i "zupełność" zostały wzięte z notatek z topologii,warto więc wybrać z której książki korzystamy i je do tego dostosować.
+		\item do definicji: ciąg zbieżny
+		\item Czy definiować topologię, zb. otw i domkn?
+		\item Czy przestrzeń metryczna => topologiczna dać jako twierdzenie?
+		
+	\end{enumerate}
+	
+	W tym rozdziale przytoczymy często powtarzające się definicje potrzebne do pełnego zrozumienia pracy.
+	
+	\begin{definition}
+		Metryką na zbiorze $M$ nazwiemy funkcję $d: M \times M \to [0, +\infty)$ spełniającą następujące warunki dla $a,b,c \in M$:
+		
+		\begin{enumerate} 
+			\item $d(a, b) = 0 \iff a = b$,
+			\item $d(a, b) = d(b, a)$,
+			\item (Nierówność trójkąta) $d(a, b) \leq d(a, c) + d(c, b)$. 
+		\end{enumerate}
+		
+	\end{definition}
+	
+	\begin{definition}
+		Przestrzeń metryczna $(M, d)$ składa się ze zbioru $M$ oraz zadanej na nim metryki $d$. Każda przestrzeń metryczna jest również przestrzenią topologiczną.
+	\end{definition}
+	
+	\begin{definition}
+		Domknięcie zb. $A$ jest to najmniejszy zbiór domknięty zawierający $A$. Oznaczać je będziemy symbolem $\overline{A}$.
+	\end{definition}
+	
+	\begin{definition}
+		Przez średnicę zbioru rozumiemy:
+		$\rm diam(F_n) := \sup\{d(y_1,y_2)\mid y_1,y_2\in F_n\}$.
+	\end{definition}
+	
+	\begin{definition}
+		Przestrzeń Baire'a - zbiór nieskończonych ciągów liczb naturalnych z topologią produktową, ozn. $B(\omega)$.
+	\end{definition}
+	
 	\section{Zupełność}
-
-\begin{definition}
-Niech $(M,d)$ będzie przestrzenią metryczną. Ciągiem Cauchy'ego
-nazwiemy taki ciąg $(x_n)_{n \in \mathbb{N}}$ elementów $M$, dla którego niezależnie od wyboru
-$\varepsilon>0$, istnieje $N$ taki, że dla $n$ i $m$ większych lub równych
-$N$ zachodzi $d(x_n,x_m) < \varepsilon$.
-\end{definition}
-
-\begin{theorem}
-W dowolnej przestrzeni metrycznej każdy ciąg zbieżny jest ciągiem Cauchy'ego.
-\end{theorem}
-
-\begin{proof}
-Niech $(x_n)_{n \in \mathbb{N}}$, będzie ciągiem w przestrzeni metrycznej
-zbiegającym do $x$. Wobec tego dla każdego $\varepsilon>0$ istnieje taki
-$N$, że dla $i \ge N$ zachodzi $d(x_i,x) < \varepsilon/2$. Wobec tego dla
-dowolnych wyrazów $x_n$ oraz $x_m$ takich, że $n,m \ge N$, z nierówności
-trójkąta zachodzi również
-\[
-d(x_n,x_m) \le d(x_n,x) + d(x_m,x) < \varepsilon/2 + \varepsilon/2
-= \varepsilon.
-\]
-\end{proof}
-
-\begin{definition}
-Przestrzeń metryczną, która spełnia warunki z poniższego twierdzenia, nazywamy zupełną.
-\end{definition}
-
-\begin{theorem}
-Następujące warunki są równoważne:
-\begin{enumerate}
-\item Każdy ciąg Cauchy'ego w dowolnej przestrzeni metrycznej $(M, d)$ posiada granicę.
-\item (Twierdzenie Cantora) każdy zstępujący ciąg niepustych zbiorów
-domkniętych $F_1 \supseteq F_2 \supseteq \ldots$ o średnicach dążących do zera
-($\rm diam(F_n) \to 0$) ma niepuste przecięcie.
-\end{enumerate}
-\end{theorem}
-
- \begin{proof} 
- \textbf{1 $\Rightarrow$ 2} 
- \\ Niech $F_1 \supseteq F_2 \supseteq \ldots$ będzie ciągiem zbiorów domkniętych spełniającym $\rm diam(F_n) \to 0$. Zauważmy, że możemy wybrać ciąg $(x_n)_{n \in \mathbb{N}}$, taki że dla każdego n, $x_n \in F_n$. Będzie to ciąg Cauchy’ego, ponieważ dla każdego $\varepsilon>0$ istnieje $N$, dla którego $\ d(y_1, y_2)<\varepsilon $ dla $ y_1, y_2 \in F_N$. Natomiast jeżeli $n, m \ge N$ to $x_n, x_m$ należą do $F_N$, czyli zachodzi $d(x_n,x_m) < \varepsilon$. Z założenia wiemy, że dowolny ciąg Cauchy'ego ma granicę $x$. Ponieważ w dowolnym $F_n \setminus F_{n+1}$ mamy jedynie pierwsze skończenie wiele wyrazów ciągu, to $x$ musi należeć do każdego $F_n$, czyli do ich przecięcia. 
- 
- ~\\ 
- \textbf{2 $\Rightarrow$ 1} \\ Niech $x_n$ będzie ciągiem Cauchy'ego. Weźmy zb. domknięte $F_n = \operatorname{cl} \{x_m : m \ge n\}$. Zauważmy, że skoro $x_n$ jest ciągiem Cauchy'ego, to $\rm diam(F_n) \to 0$. Wobec tego istnieje punkt $x \in \bigcap F_n$, więc mamy $ \sup \{ d(x,y) \mid y \in F_n, x \in \bigcap F_n \} \to 0$, ale jak łatwo można zauważyć $ \sup \{ d(x, y) \mid y \in F_n, x \in \bigcap F_n \} \ge d(x,x_n)$ dla wyrazów ciągu $(x_n)_{n \in \mathbb{N}}$, zatem $x_n \to x$.
-
-\end{proof}
-
+	
+	\begin{definition}
+		Niech $(M,d)$ będzie przestrzenią metryczną. Ciągiem Cauchy'ego
+		nazwiemy taki ciąg $(x_n)_{n \in \mathbb{N}}$ elementów $M$, dla którego niezależnie od wyboru
+		$\varepsilon>0$, istnieje $N$ taki, że dla $n$ i $m$ większych lub równych
+		$N$ zachodzi $d(x_n,x_m) < \varepsilon$.
+	\end{definition}
+	
+	\begin{theorem}
+		W dowolnej przestrzeni metrycznej każdy ciąg zbieżny jest ciągiem Cauchy'ego.
+	\end{theorem}
+	
+	\begin{proof}
+		Niech $(x_n)_{n \in \mathbb{N}}$, będzie ciągiem w przestrzeni metrycznej
+		zbiegającym do $x$. Wobec tego dla każdego $\varepsilon>0$ istnieje taki
+		$N$, że dla $i \ge N$ zachodzi $d(x_i,x) < \varepsilon/2$. Wobec tego dla
+		dowolnych wyrazów $x_n$ oraz $x_m$ takich, że $n,m \ge N$, z nierówności
+		trójkąta zachodzi również
+		\[
+		d(x_n,x_m) \le d(x_n,x) + d(x_m,x) < \varepsilon/2 + \varepsilon/2
+		= \varepsilon.
+		\]
+	\end{proof}
+	
+	\begin{definition}
+		Przestrzeń metryczną, która spełnia warunki z poniższego twierdzenia, nazywamy zupełną.
+	\end{definition}
+	
+	\begin{theorem}
+		Następujące warunki są równoważne:
+		\begin{enumerate}
+			\item Każdy ciąg Cauchy'ego w dowolnej przestrzeni metrycznej $(M, d)$ posiada granicę.
+			\item (Twierdzenie Cantora) każdy zstępujący ciąg niepustych zbiorów
+			domkniętych $F_1 \supseteq F_2 \supseteq \ldots$ o średnicach dążących do zera
+			($\rm diam(F_n) \to 0$) ma niepuste przecięcie.
+		\end{enumerate}
+	\end{theorem}
+	
+	\begin{proof} 
+		\textbf{1 $\Rightarrow$ 2} 
+		\\ Niech $F_1 \supseteq F_2 \supseteq \ldots$ będzie ciągiem zbiorów domkniętych spełniającym $\rm diam(F_n) \to 0$. Zauważmy, że możemy wybrać ciąg $(x_n)_{n \in \mathbb{N}}$, taki że dla każdego n, $x_n \in F_n$. Będzie to ciąg Cauchy’ego, ponieważ dla każdego $\varepsilon>0$ istnieje $N$, dla którego $\ d(y_1, y_2)<\varepsilon $ dla $ y_1, y_2 \in F_N$. Natomiast jeżeli $n, m \ge N$ to $x_n, x_m$ należą do $F_N$, czyli zachodzi $d(x_n,x_m) < \varepsilon$. Z założenia wiemy, że dowolny ciąg Cauchy'ego ma granicę $x$. Ponieważ w dowolnym $F_n \setminus F_{n+1}$ mamy jedynie pierwsze skończenie wiele wyrazów ciągu, to $x$ musi należeć do każdego $F_n$, czyli do ich przecięcia. 
+		
+		~\\ 
+		\textbf{2 $\Rightarrow$ 1} \\ Niech $x_n$ będzie ciągiem Cauchy'ego. Weźmy zb. domknięte $F_n = \operatorname{cl} \{x_m : m \ge n\}$. Zauważmy, że skoro $x_n$ jest ciągiem Cauchy'ego, to $\rm diam(F_n) \to 0$. Wobec tego istnieje punkt $x \in \bigcap F_n$, więc mamy $ \sup \{ d(x,y) \mid y \in F_n, x \in \bigcap F_n \} \to 0$, ale jak łatwo można zauważyć $ \sup \{ d(x, y) \mid y \in F_n, x \in \bigcap F_n \} \ge d(x,x_n)$ dla wyrazów ciągu $(x_n)_{n \in \mathbb{N}}$, zatem $x_n \to x$.
+		
+	\end{proof}
+	
 	\section{Gry topologiczne}
-	Gra topologiczna to w ogólności nieskończona gra pozycyjna między dwoma graczami, których kolejne ruchy polegają na wybieraniu obiektów o zadanych własnościach topologicznych, np. punktów, zbiorów otwartych/domkniętych.\\
+	Grą topologiczną nazywamy nieskończoną, zazwyczaj przeliczalnie długą - tylko takie będziemy też rozważać w dalszej części - turową grę między dwójką graczy, w której naprzemiennie wybierają oni obiekty z pewnej przestrzeni topologicznej o zadanych własnościach topologicznych, np. punkty, zbiory otwarte/domknięte. Pełną rozgrywkę takiej gry na przestrzeni topologicznej $X$ reprezentujemy przez funkcję $f:\omega\longrightarrow Y$, gdzie mamy $Y=X$ lub $Y=\mathbb{P}(X)$ zależnie od wybranej przez nas gry.\\
 	Niech gra toczy się między graczami I i II i niech wybierają oni w każdym kroku podzbiory przestrzeni topologicznej $X$, oznaczone odpowiednio przez $I_n$ dla gracza I oraz $J_n$ dla gracza II. Wówczas rezultatem gry jest ciąg $I_0,J_0,I_1,J_1,\dots$. Gracz I wygrywa, jeżeli ciąg ten spełnia jakąś zadaną wcześniej własność, w przeciwnym wypadku wygrywa gracz II.
 	\begin{definition}
-		Strategią wygrywającą dla danego gracza nazwiemy taki sposób podejmowania decyzji w swojej turze, który gwarantuje mu zwycięstwo niezależnie od decyzji drugiego gracza.
+		~\\
+		\textbf{Strategią wygrywającą} dla danego gracza nazwiemy taki sposób podejmowania decyzji w swojej turze, który gwarantuje mu zwycięstwo niezależnie od decyzji drugiego gracza.
 	\end{definition}
 	\section{Gra Banacha-Mazura}
 	Przykładem gry topologicznej jest gra Banacha-Mazura. Rozgrywa się ona na przestrzeni Baire'a $B(\omega)$ z wyróżnionym $E\subseteq B(\omega)$. W swoim ruchu każdy gracz wybiera liczbę naturalną, konstruując w tej sposób ciąg $(m_n)^\infty_{n=0}$, gdzie elementy o indeksach parzystych wybierał gracz I a elementy o indeksach nieparzystych gracz II. Gracz I wygrywa, jeżeli $(m_n)^\infty_{n=0}\in E$, w przeciwnym wypadku wygrywa gracz II. Taką grę oznaczamy poprzez $G_{BM}(E)$.\\\\
 	Grę Banacha-Mazura można uogólnić do dowolnej przestrzeni topologicznej $X$ z wyróżnionym podzbiorem $E\subseteq X$. Wówczas grę rozpoczyna gracz I wybierając otwarty zbiór $U_0\subseteq X$, po czym każdy gracz wybiera zbiory otwarte tak, aby utworzyć ciąg $U_0\supseteq V_0\supseteq U_1\supseteq V_1,\dots$. Gracz I wygrywa tę grę jeśli $E\cap \left(\bigcap^\infty_{n=0} U_n\right)\neq \emptyset$, w przeciwnym wypadku wygrywa gracz II. Oznaczamy tę grę poprzez $G_{uBM}(X, E)$.
 	\begin{definition}
-		Gra $G_{BM}(E)$ lub $G_{uBM}(X, E)$ jest zdeterminowana, jeżeli któryś z graczy ma strategię wygrywającą.
+		~\\
+		Gra $G_{BM}(E)$ lub $G_{uBM}(X, E)$ jest \textbf{zdeterminowana}, jeżeli któryś z graczy ma strategię wygrywającą.
 	\end{definition}
-	\begin{theorem}
+	\begin{fact}
 		~\\
 		Jeżeli zbiór $E\subseteq B(\omega)$ jest przeliczalny, to wówczas gracz II ma strategię wygrywającą.
-	\end{theorem}
+	\end{fact}
 	\begin{proof}
 		~\\
 		Niech $E=\{(_lk_n)\in B(\omega):l\in\mathbb{N}\}$.\\
@@ -131,5 +135,67 @@ domkniętych $F_1 \supseteq F_2 \supseteq \ldots$ o średnicach dążących do z
 	\begin{center}
 		\textit{Dla każdego $E\subseteq B(\omega)$ gra $G_{BM}(E)$ jest zdeterminowana}.
 	\end{center}
+	\section{Aksjomaty rozdzielania i zwartość}
+	\begin{definition}
+		Powiemy, że przestrzeń topologiczna $(X,\tau)$ jest:
+		\begin{itemize}
+			\item $T_0$ (inaczej: Kolmogorova), jeśli\\ $(\forall \mathnormal{x,y} \in X)(\mathnormal{x\neq y}\implies (\exists \mathnormal{U}\in \tau)((\mathnormal{x}\in\mathnormal{U} \land \mathnormal{y} \notin\mathnormal{U})\lor(\mathnormal{x}\notin\mathnormal{U} \wedge \mathnormal{y} \in\mathnormal{U})))$
+			\item $T_1$ (inaczej: Fr\'echeta), jeśli\\ $(\forall \mathnormal{x,y} \in X)(\mathnormal{x\neq y}\implies (\exists \mathnormal{U}\in \tau)(\mathnormal{x}\in\mathnormal{U} \land \mathnormal{y} \notin\mathnormal{U}))$
+			\item $T_2$ (inaczej: Hausdorffa), jeśli\\ $(\forall \mathnormal{x,y} \in X)(\mathnormal{x\neq y}\implies (\exists \mathnormal{U,V}\in \tau)(\mathnormal{x}\in\mathnormal{U} \land \mathnormal{y} \in\mathnormal{V} \land \mathnormal{U}\cap\mathnormal{V}=\emptyset)$
+			\item $T_3$ (inaczej: regularna) jeśli\\ $(\forall \mathnormal{x}\in X)(\forall\mathnormal{U} \in\tau)(\mathnormal{x}\in\mathnormal{U}\implies(\exists\mathnormal{V}\in\tau)(\mathnormal{x}\in\mathnormal{V}\subseteq\mathnormal{\overline{V}}\subseteq\mathnormal{U}))$ i jest $T_1$.
+		\end{itemize}
+	\end{definition}
+	\text{}\\
+	Zdefiniowane powyżej własności to poszczególne ,,aksjomaty rozdzielania", które w pewnym sensie określają jak blisko jest przestrzeń topologiczna do przestrzeni metrycznej.
+	\begin{definition}
+		Rodzinę zbiorów $\mathcal{F}$ nazwiemy scentryzowaną, jeżeli dla dowolnego skończonego $\mathcal{F}_0\subseteq\mathcal{F}$ mamy $\bigcap\mathcal{F}_0\neq\emptyset$.
+	\end{definition}
+	A teraz przejdziemy do jednego z najważniejszego pojęcia w topologii, zwartości.
+	\begin{definition}
+		Dla przestrzeni topologicznej $(X,\tau)$, rodzinę $\mathcal{P}\subseteq\tau$ nazwiemy pokryciem zbioru $A\subseteq X$ jeśli $A\subseteq\bigcup\mathcal{P}$.
+	\end{definition}
+	\begin{definition}
+		Zbiór $K\subseteq X$ nazwiemy zwartym, jeżeli każde pokrycie zbioru K ma skończone podpokrycie. Jeśli X jest swoim zwartym podzbiorem to powiemy, że  przestrzeń jest zwarta.
+	\end{definition}
+	\begin{fact}
+		Domknięty podzbiór zbioru zwartego jest zwarty.
+	\end{fact}
+	\begin{proof}
+		Niech $\mathnormal{K}$ będzie zbiorem zwartym a $\mathnormal{F}$ jego domkniętym podzbiorem. Ustalmy dowolne $\mathcal{P}$ będące pokryciem $\mathnormal{F}$. Wówczas $\mathcal{P}\cup\{\mathnormal{F^c}\}$ jest otwartym pokryciem całej przestrzeni, więc w szczególności jest pokryciem $\mathnormal{K}$. Ze zwartości istnieje skończone podpokrycie $\mathcal{P'}\subseteq\mathcal{P}\cup\{\mathnormal{F^c}\}$. Wówczas rodzina $\mathcal{P'}\cap\mathcal{P}=\mathcal{P'}\setminus\{\mathnormal{F^c}\}$ jest skończonym podpokryciem zbioru $\mathnormal{F}$.
+	\end{proof}
+	\begin{lemma}
+		W przestrzeni zwartej, scentryzowana rodzina zbiorów domkniętych ma niepusty przekrój.
+	\end{lemma}
+	\begin{proof}
+		~\\
+		Niech X bedzie przestrzenią zwartą a $\mathcal{F}$ scentryzowaną rodziną zbiorów domkniętych. Załóżmy nie wprost, że $\bigcap\mathcal{F}=\emptyset$. Wówczas $X=\emptyset^c=(\bigcap\mathcal{F})^c=\bigcup\{F^c:F\in\mathcal{F}\}$, gdzie ostatnia równość wynika z prawa De Morgana. Stąd rodzina $\{F^c:F\in\mathcal{F}\}$ jest pokryciem X, a więc ze zwartości X istnieje skończone $\mathcal{F}_0\subseteq\mathcal{F}$ takie, że $\{F^c:F\in\mathcal{F}_0\}$ jest skończonym podpokryciem X, tzn. $X=\bigcup\{F^c:F\in\mathcal{F}_0\}$. Otrzymujemy $\emptyset=X^c=(\bigcup\{F^c:F\in\mathcal{F}_0\})^c=\bigcap\mathcal{F}_0$ co daje sprzeczność z założeniem, że $\mathcal{F}$ jest rodzinną scentryzowaną.
+	\end{proof}
+	\begin{definition}
+		Powiemy, że przestrzeń X jest lokalnie zwarta, jeśli dla każdego punktu $\mathnormal{x}\in X$ istnieje otwarte otoczenie $\mathnormal{x}\in\mathnormal{U}\subseteq X$, takie że $\mathnormal{\overline{U}}$ jest zwarte.
+	\end{definition}
+	\begin{remark}
+		Każda przestrzeń zwarta jest lokalnie zwarta.
+	\end{remark}
+	\begin{theorem}
+		Każda przestrzeń, która jest $T_2$ i lokalnie zwarta, jest dodatkowo $T_3$.
+	\end{theorem}
+	\begin{proof}
+		~\\
+		Niech $(X,\tau)$ będzie lokalnie zwarta i $T_2$. Ustalmy dowolny $\mathnormal{x}\in X$ i jego dowolne otoczenie otwarte $\mathnormal{U}\subseteq X$. Cel: Znaleźć otwarte $V$ takie, że $\mathnormal{x}\in\mathnormal{V}\subseteq\mathnormal{\overline{V}}\subseteq\mathnormal{U}$.
+		~\\ BSO możemy założyć, że $\mathnormal{\overline{U}}$ jest zwarte. Istotnie, ponieważ X jest lokalnie zwarta, więc istnieje otwarte $\mathnormal{U'}\ni\mathnormal{x}$ takie, że $\mathnormal{\overline{U'}}$ jest zwarte. Wtedy $\mathnormal{U''}=\mathnormal{U}\cap\mathnormal{U'}$ jest otwartym otoczeniem $\mathnormal{x}$, którego domknięcie jest zwarte i możemy przyjąć $\mathnormal{U''}$ zamiast $\mathnormal{U}$.
+		~\\~\\ Rozważmy zbiór $\mathnormal{B}=\mathnormal{\overline{U}}\setminus\mathnormal{U}$ i zauważmy, że jest domkniętym podzbiorem $\mathnormal{\overline{U}}$, a więc $\mathnormal{B}$ jest zbiorem zwartym. Przypuśćmy, że $\mathnormal{B}\neq\emptyset$ (w przeciwnym przypadku $\mathnormal{V}=\mathnormal{U}$ spełnia tezę).
+		Ponieważ $\mathnormal{x}\notin\mathnormal{B}$ i X jest $T_2$, więc  dla każdego $\mathnormal{y}\in\mathnormal{B}$ istnieją otwarte $\mathnormal{V_y},\mathnormal{W_y}$ takie, że $\mathnormal{x}\in\mathnormal{V_y}$, $\mathnormal{y}\in\mathnormal{W_y}$ i $\mathnormal{V_y}\cap \mathnormal{W_y}=\emptyset$. Rodzina $\{\mathnormal{W_y:y\in B}\}$ stanowi pokrycie zbioru $\mathnormal{B}$, a więc ze zwatości $\mathnormal{B}$ istnieje skończone $\mathnormal{B'}\subseteq\mathnormal{B}$ takie, że $\{\mathnormal{W_y:y\in B'}\}$ jest skończonym podpokryciem $\mathnormal{B}$. Niech $\mathnormal{V}=\bigcap\{\mathnormal{V_y\cap\mathnormal{U}:y\in B'}\}$ i $\mathnormal{W}=\bigcup\{\mathnormal{W_y:y\in B'\}}$. Wówczas $\mathnormal{V\subseteq\mathnormal{U}}$ jest otoczeniem otwartym $\mathnormal{x}$ jako skończony przekrój otoczeń otwartych i $\mathnormal{V}\cap\mathnormal{W}=\emptyset$. Niech $\mathnormal{W'}=\mathnormal{W}\cup\mathnormal{\overline{U}^c}$. Mamy $\mathnormal{V}\cap\mathnormal{W'}=\emptyset$ i $\mathnormal{U^c}=\mathnormal{\overline{U}^c}\cup\mathnormal{B}\subseteq\mathnormal{W'}$, a więc $\mathnormal{V}\subseteq\mathnormal{W'^c}\subseteq\mathnormal{U}$. Zatem $\mathnormal{x}\in\mathnormal{V}\subseteq\mathnormal{\overline{V}}\subseteq\mathnormal{W'^c}\subseteq\mathnormal{U}$, bo $\mathnormal{W'^c}$ jest domknięty.
+	\end{proof}
+	\section{Twierdzenie Baire'a}
+	Jednym z ważniejszych twierdzeń topologicznych jest twierdzenie Baire'a, które jak się okazuje jest świetnym przykładem gry topologicznej. Ale najpierw trzeba wprowadzić parę definicji.
+	\begin{definition}
+		Powiemy, że zbiór $\mathnormal{N}$ jest nigdziegęsty, jeżeli $int(\mathnormal{\overline{N}})=\emptyset$.\\
+		Następnie powiemy, że zbiór $\mathnormal{M}$ jest I kategorii Baire'a (albo: mizerny), jeżeli $\mathnormal{M}$ jest przeliczalną sumą zbiorów nigdziegęstych.
+	\end{definition}
+	\begin{fact}
+		Zbiór $\mathnormal{N}$ jest nigdziegęsty wtedy i tylko wtedy, gdy dla każdego niepustego zbioru otwartego $\mathnormal{U}$ istnieje niepusty zbiór otwarty $\mathnormal{V}\subseteq\mathnormal{U}$ taki, że $\mathnormal{V}\cap\mathnormal{N}=\emptyset$.
+	\end{fact}
+	\begin{proof}
+		Załóżmy, że $\mathnormal{N}$ jest zbiorem nigdziegęstym a $\mathnormal{U}$ jest dowolnym niepustym zbiorem otwartym. Wówczas $\mathnormal{V}=\mathnormal{U\setminus\mathnormal{\overline{N}}}$ jest otwartym podzbiorem $\mathnormal{U}$. Zbiór $\mathnormal{V}$ jest niepusty, bo w przeciwnym przypadku $\mathnormal{U}\subseteq\mathnormal{\overline{N}}$ czyli $\mathnormal{U}\subseteq int(\mathnormal{\overline{N}})=\emptyset$ ale $\mathnormal{U}$ było niepuste. W drugą stronę, jeśli $\mathnormal{N}$ nie jest nigdziegęsty (tzn. $int(\mathnormal{\overline{N}})\neq\emptyset$) to przyjmijmy $\mathnormal{U}=int(\mathnormal{\overline{N}})$. Mamy $int(\mathnormal{U}\setminus\mathnormal{N})\subseteq int(\mathnormal{\overline{N}}\setminus\mathnormal{N})=\emptyset$, czyli dowolny otwarty $\mathnormal{V}\subseteq(\mathnormal{U}\setminus\mathnormal{N})$ jest pusty.
+	\end{proof}
 \end{document}
-

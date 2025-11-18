@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.10)  11 NOV 2025 23:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.10)  18 NOV 2025 23:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -190,10 +190,13 @@ LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 )
 \c@theorem=\count283
 \c@definition=\count284
+\c@lemma=\count285
+\c@fact=\count286
+\c@remark=\count287
 
 (C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count285
+\l__color_backend_stack_int=\count288
 \l__pdf_internal_box=\box54
 )
 
@@ -203,22 +206,22 @@ LaTeX Warning: Unused global option(s):
 (ZPS.aux)
 \openout1 = `ZPS.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -254,47 +257,47 @@ LaTeX Font Info:    ... okay on input line 16.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for OML+plm on input line 1
-7.
+LaTeX Font Info:    Trying to load font information for OML+plm on input line 2
+0.
 (C:\Users\adria\AppData\Roaming\MiKTeX\tex/latex/polski\omlplm.fd
 File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    Trying to load font information for OMS+plsy on input line 
-17.
+20.
 
 (C:\Users\adria\AppData\Roaming\MiKTeX\tex/latex/polski\omsplsy.fd
 File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    Trying to load font information for OMX+plex on input line 
-17.
+20.
 
 (C:\Users\adria\AppData\Roaming\MiKTeX\tex/latex/polski\omxplex.fd
 File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <14.4> on input line 17.
+(Font)              <14.4> on input line 20.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <10> on input line 17.
+(Font)              <10> on input line 20.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <7> on input line 17.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 17.
+(Font)              <7> on input line 20.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 20.
 
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 17.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 20.
 
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <12> on input line 32.
+(Font)              <12> on input line 34.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <8> on input line 32.
+(Font)              <8> on input line 34.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <6> on input line 32.
+(Font)              <6> on input line 34.
 
 
 [1
@@ -303,42 +306,53 @@ LaTeX Font Info:    External font `plex10' loaded for size
 a/AppData/Roaming/MiKTeX/fonts/enc/dvips/pl/plrm.enc}{C:/Users/adria/AppData/Ro
 aming/MiKTeX/fonts/enc/dvips/pl/plmi.enc}{C:/Users/adria/AppData/Roaming/MiKTeX
 /fonts/enc/dvips/pl/plms.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 114--116
+
+[2{C:/Users/adria/AppData/Roaming/MiKTeX/fonts/enc/dvips/pl/plit.enc}{C:/Users/
+adria/AppData/Roaming/MiKTeX/fonts/enc/dvips/pl/plme.enc}]
+Underfull \hbox (badness 10000) in paragraph at lines 117--119
 
  []
 
 
 
-[2{C:/Users/adria/AppData/Roaming/MiKTeX/fonts/enc/dvips/pl/plit.enc}{C:/Users/
-adria/AppData/Roaming/MiKTeX/fonts/enc/dvips/pl/plme.enc}]
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 183--188
 
-[3] (ZPS.aux)
+ []
+
+
+
+[4]
+
+[5] (ZPS.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 2666 strings out of 473904
- 38408 string characters out of 5736415
- 1940908 words of memory out of 5000000
- 25518 multiletter control sequences out of 15000+600000
- 570537 words of font info for 73 fonts, out of 8000000 for 9000
+ 2696 strings out of 473904
+ 38801 string characters out of 5736415
+ 1944908 words of memory out of 5000000
+ 25547 multiletter control sequences out of 15000+600000
+ 570874 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,6n,65p,743b,218s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/U
-sers/adria/AppData/Roaming/MiKTeX/fonts/type1/public/pl/plbx12.pfb><C:/Users/ad
-ria/AppData/Roaming/MiKTeX/fonts/type1/public/pl/plex10.pfb><C:/Users/adria/App
-Data/Roaming/MiKTeX/fonts/type1/public/pl/plmi12.pfb><C:/Users/adria/AppData/Ro
-aming/MiKTeX/fonts/type1/public/pl/plmi8.pfb><C:/Users/adria/AppData/Roaming/Mi
-KTeX/fonts/type1/public/pl/plr12.pfb><C:/Users/adria/AppData/Roaming/MiKTeX/fon
-ts/type1/public/pl/plr17.pfb><C:/Users/adria/AppData/Roaming/MiKTeX/fonts/type1
-/public/pl/plr8.pfb><C:/Users/adria/AppData/Roaming/MiKTeX/fonts/type1/public/p
-l/plsy10.pfb><C:/Users/adria/AppData/Roaming/MiKTeX/fonts/type1/public/pl/plsy8
-.pfb><C:/Users/adria/AppData/Roaming/MiKTeX/fonts/type1/public/pl/plti12.pfb>
-Output written on ZPS.pdf (3 pages, 96066 bytes).
+ 57i,8n,65p,1369b,218s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
+1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb
+><C:/Users/adria/AppData/Roaming/MiKTeX/fonts/type1/public/pl/plbx12.pfb><C:/Us
+ers/adria/AppData/Roaming/MiKTeX/fonts/type1/public/pl/plex10.pfb><C:/Users/adr
+ia/AppData/Roaming/MiKTeX/fonts/type1/public/pl/plmi12.pfb><C:/Users/adria/AppD
+ata/Roaming/MiKTeX/fonts/type1/public/pl/plmi8.pfb><C:/Users/adria/AppData/Roam
+ing/MiKTeX/fonts/type1/public/pl/plr12.pfb><C:/Users/adria/AppData/Roaming/MiKT
+eX/fonts/type1/public/pl/plr17.pfb><C:/Users/adria/AppData/Roaming/MiKTeX/fonts
+/type1/public/pl/plr8.pfb><C:/Users/adria/AppData/Roaming/MiKTeX/fonts/type1/pu
+blic/pl/plsy10.pfb><C:/Users/adria/AppData/Roaming/MiKTeX/fonts/type1/public/pl
+/plsy8.pfb><C:/Users/adria/AppData/Roaming/MiKTeX/fonts/type1/public/pl/plti12.
+pfb>
+Output written on ZPS.pdf (5 pages, 112234 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
+ 83 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
